@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FilterX — Options</title>
+  <style>
+    :root{ --muted:#6e8296; --accentA:#7c5cff; --accentB:#47d0ff; font-family:Inter, Arial, sans-serif; }
+    body{ margin:0; padding:22px; background:linear-gradient(180deg,#f6f9ff,#f3f8ff); color:#07203a; }
+    .wrap{ max-width:520px; margin:0 auto; }
+    h1{ margin:0 0 6px 0; font-size:20px; color:#254c7d; }
+    .hint{ font-size:13px; color:var(--muted); margin-bottom:12px; }
+    .modes{ display:flex; gap:8px; margin:12px 0 18px 0; }
+    .mode{ flex:1; padding:10px; border-radius:12px; text-align:center; cursor:pointer; border:1px solid rgba(20,40,80,.03); background:#fbfdff; color:#486d9a; font-weight:700 }
+    .mode.active{ background: linear-gradient(90deg,var(--accentA),var(--accentB)); color:#fff; box-shadow:0 8px 20px rgba(92,64,255,.08); }
+    .row{ display:flex; align-items:center; justify-content:space-between; margin:10px 0; padding:10px; border-radius:10px; background:#fff; border:1px solid rgba(20,40,80,.03) }
+    .row label{ font-weight:600; color:#123b5a; }
+    .small{ font-size:12px; color:var(--muted); margin-top:6px; }
+    input[type="text"]{ width:100%; padding:10px; border-radius:10px; border:1px solid rgba(30,60,100,0.04); background:#fbfeff; margin-top:8px }
+    .btnSave{ padding:10px 18px; border-radius:22px; border:none; background: linear-gradient(90deg,var(--accentA),var(--accentB)); color:white; font-weight:700; cursor:pointer; width:100%; margin-top:14px }
+    .switchSmall{ width:44px; height:26px; background:#e9f3ff; border-radius:30px; padding:3px; display:inline-flex; align-items:center; cursor:pointer; }
+    .switchSmall.on{ background: linear-gradient(90deg,var(--accentA),var(--accentB)); }
+    .switchSmall .dot{ width:20px; height:20px; border-radius:50%; background:#fff; transform:translateX(0); transition:transform .18s; }
+    .switchSmall.on .dot{ transform: translateX(18px); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Settings</h1>
+    <div class="hint">Configure your AI protection</div>
+
+    <div style="font-weight:700; color:#254c7d; margin-bottom:8px">Protection Mode</div>
+    <div class="modes">
+      <div id="mode-strict" class="mode">Strict</div>
+      <div id="mode-balanced" class="mode">Balanced</div>
+      <div id="mode-lenient" class="mode">Lenient</div>
+    </div>
+
+    <div style="font-weight:700; color:#254c7d; margin-bottom:8px">Content Filters</div>
+
+    <div class="row">
+      <div>
+        <label>Block Explicit Images</label>
+        <div class="small">Completely hide NSFW visual content</div>
+      </div>
+      <div id="blockExplicit" class="switchSmall" role="button"><div class="dot"></div></div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Blur Suggestive Content</label>
+        <div class="small">Blur potentially sensitive content</div>
+      </div>
+      <div id="blurSuggestive" class="switchSmall" role="button"><div class="dot"></div></div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Filter NSFW Text & Slang</label>
+        <div class="small">Multilingual text filtering with AI</div>
+      </div>
+      <div id="filterText" class="switchSmall" role="button"><div class="dot"></div></div>
+    </div>
+
+    <div style="margin-top:14px">
+      <div style="font-weight:700; color:#254c7d; margin-bottom:6px">Backend URL</div>
+      <input id="backend" type="text" placeholder="http://localhost:8000" />
+      <div class="small">Where the extension sends thumbnails for classification (dev)</div>
+    </div>
+
+    <button id="save" class="btnSave">Save Preferences</button>
+  </div>
+
+  <!-- external script -->
+  <script src="options.js"></script>
+</body>
+</html>
