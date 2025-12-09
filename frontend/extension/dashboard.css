@@ -1,0 +1,73 @@
+:root{
+  --bg1:#f4f7ff; --bg2:#eef6ff;
+  --card:#ffffff; --muted:#6f889f;
+  --accent1:#7c5cff; --accent2:#47d0ff;
+  --radius:16px;
+  font-family: Inter, system-ui, Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2)); color:#06203a}
+.page{min-height:100vh; display:flex; flex-direction:column;}
+.hero{padding:28px 32px 18px; text-align:center}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
+.brand{font-weight:700;color:#254c7d}
+.tabs{display:flex;gap:10px}
+.tab{background:transparent;border:1px solid rgba(0,0,0,0.05);padding:8px 12px;border-radius:999px;cursor:pointer}
+.tab.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 10px 30px rgba(92,64,255,0.12)}
+h1{margin:10px 0 6px;font-size:28px;color:#3b6aa6}
+.sub{color:var(--muted);margin:0}
+
+.content{flex:1; display:block; max-width:1100px;margin:18px auto;padding:0 18px}
+.panel{display:none}
+.panel.active{display:block}
+
+/* promo card */
+.promo-card{background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:18px;padding:24px;box-shadow:0 20px 60px rgba(6,14,28,0.06);border:1px solid rgba(30,60,120,0.04)}
+.promo-head h2{margin:0;color:#2b5aa4}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.feature{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:12px;border:1px solid rgba(20,40,80,.03)}
+.promo-cta{display:flex;justify-content:center;margin-top:18px}
+.cta{padding:12px 20px;border-radius:28px;border:none;color:white;background:linear-gradient(90deg,var(--accent1),var(--accent2));font-weight:700;cursor:pointer;box-shadow:0 12px 36px rgba(72,64,255,0.12)}
+.small{font-size:13px;color:var(--muted)}
+
+/* popup demo */
+.popup-card{width:360px;margin:0 auto;background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:16px;padding:16px;border:1px solid rgba(20,40,80,.04);box-shadow:0 20px 60px rgba(6,14,28,0.06)}
+.card-head{display:flex;justify-content:space-between;align-items:center}
+.toggle{width:56px;height:30px;border-radius:30px;background:#eaf6ff;padding:3px;position:relative}
+.toggle::after{content:'';position:absolute;width:24px;height:24px;border-radius:50%;background:#fff;left:3px;top:3px;transition:all .18s}
+.toggle.on{background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+.toggle.on::after{left:29px;box-shadow:0 12px 28px rgba(92,64,255,.12)}
+.stats-row{display:flex;gap:12px;margin-top:12px}
+.stat{flex:1;background:linear-gradient(180deg,#fff,#fcfeff);padding:10px;border-radius:10px;text-align:center;border:1px solid rgba(20,40,80,.03)}
+.num{font-weight:800;color:#3b6aa6;font-size:18px}
+.lab{font-size:12px;color:var(--muted);margin-top:6px}
+.status{margin-top:12px;padding:8px;border-radius:10px;background:linear-gradient(90deg,#f7fbff,#f2f9ff);color:#2b517b;border:1px solid rgba(40,70,120,.04);text-align:center}
+.card-footer{margin-top:12px;text-align:center}
+
+/* settings demo */
+.settings-card{max-width:720px;margin:0 auto;background:linear-gradient(180deg,#ffffff,#fbfdff);padding:18px;border-radius:14px;border:1px solid rgba(20,40,80,.03);box-shadow:0 20px 60px rgba(6,14,28,0.06)}
+.modes{display:flex;gap:8px;margin-bottom:10px}
+.mode{flex:1;padding:10px;border-radius:12px;border:1px solid rgba(20,40,80,.03);cursor:pointer;background:#fbfdff;color:#486d9a;font-weight:700}
+.mode.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 8px 22px rgba(92,64,255,0.08)}
+.filters{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.filters label{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fcfeff);border:1px solid rgba(20,40,80,.03)}
+.filters input{transform:scale(1.1)}
+.backend{margin-top:12px}
+.backend input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(20,40,80,.05);}
+
+/* footer */
+.foot{text-align:center;padding:18px;color:var(--muted)}
+
+/* responsive */
+@media (max-width:900px){
+  .promo-grid{grid-template-columns:repeat(2,1fr)}
+  .popup-card{width:100%}
+  .settings-card{padding:12px}
+}
+@media (max-width:600px){
+  h1{font-size:22px}
+  .promo-grid{grid-template-columns:1fr}
+  .nav{padding:0 12px}
+  .tab{padding:6px 8px}
+  .popup-card{width:100%}
+}

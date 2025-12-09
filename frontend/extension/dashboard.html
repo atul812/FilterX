@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FilterX Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="nav">
+        <div class="brand">FilterX</div>
+        <nav class="tabs">
+          <button class="tab active" data-tab="promo">Promotional Card</button>
+          <button class="tab" data-tab="popup">Popup UI</button>
+          <button class="tab" data-tab="settings">Settings Page</button>
+          <button class="tab" data-tab="blocked">Blocked Overlay</button>
+        </nav>
+      </div>
+
+      <h1>FilterX — AI Safe Browsing Shield</h1>
+      <p class="sub">Chrome Extension Complete UI System</p>
+    </header>
+
+    <main class="content">
+      <section id="promo" class="panel active">
+        <div class="promo-card">
+          <div class="promo-head">
+            <h2>FilterX</h2>
+            <div class="small">AI Safe Browsing Shield</div>
+          </div>
+
+          <div class="promo-grid">
+            <div class="feature">
+              <h4>AI-Powered Real-Time Shield</h4>
+              <p>Detects and blurs explicit images, videos, and text instantly.</p>
+            </div>
+            <div class="feature">
+              <h4>Zero-Latency, Privacy-First</h4>
+              <p>Processing locally on the device to ensure privacy.</p>
+            </div>
+            <div class="feature">
+              <h4>Smart Context-Aware Filtering</h4>
+              <p>Understands context, not just keywords to reduce false positives.</p>
+            </div>
+          </div>
+
+          <div class="promo-cta">
+            <button id="addChrome" class="cta">Add to Chrome — It’s Free</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="popup" class="panel">
+        <div class="popup-demo">
+          <div class="popup-card">
+            <div class="card-head">
+              <div>
+                <h3>FilterX</h3>
+                <div class="muted">AI Safe Browsing Shield</div>
+              </div>
+              <div id="demoToggle" class="toggle"></div>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat">
+                <div class="num" id="statBlocked">0</div>
+                <div class="lab">Blocked</div>
+              </div>
+              <div class="stat">
+                <div class="num" id="statBlurred">0</div>
+                <div class="lab">Blurred</div>
+              </div>
+            </div>
+
+            <div class="status">Running locally on this device</div>
+
+            <div class="card-footer">
+              <button id="openSettingsBtn" class="cta small">Open Settings</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings" class="panel">
+        <div class="settings-demo">
+          <div class="settings-card">
+            <h3>Settings</h3>
+            <div class="modes">
+              <button class="mode active" data-mode="strict">Strict</button>
+              <button class="mode" data-mode="balanced">Balanced</button>
+              <button class="mode" data-mode="lenient">Lenient</button>
+            </div>
+
+            <div class="filters">
+              <label><input id="uiBlockExplicit" type="checkbox" /> Block Explicit Images</label>
+              <label><input id="uiBlurSuggestive" type="checkbox" /> Blur Suggestive Content</label>
+              <label><input id="uiFilterText" type="checkbox" /> Filter NSFW Text & Slang</label>
+            </div>
+
+            <div class="backend">
+              <label>Backend URL</label>
+              <input id="uiBackend" type="text" placeholder="http://localhost:8000" />
+            </div>
+
+            <div style="text-align:center;margin-top:14px;">
+              <button id="saveSettings" class="cta">Save Preferences</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blocked" class="panel">
+        <div style="display:flex;justify-content:center;">
+          <button id="showBlockedDemo" class="cta">Show Blocked Overlay Demo</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">© FilterX • Built for demo</footer>
+  </div>
+
+  <!-- external script -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
